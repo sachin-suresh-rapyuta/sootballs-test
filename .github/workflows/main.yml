@@ -15,22 +15,37 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build:
+  # This workflow contains a single job called "Documentation Testcase"
+  documentation_testcase:
     # The type of runner that the job will run on
+    name: Rapyuta Documentation Job
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v3
+    # Checks to see if any files in the PR match one of the listed file types.
+    # This will return true if there's a markdown/RST file that was changed
+    # in the PR.
+      - name: Dorny Path Filter
+        uses: dorny/paths-filter@v2
+        id: filter
+        with:
+          filters: |
+            md:
+              - '**/*.md'
+            rst:
+              - '**/*.rst'
+        
+      # Use the filter to check if files with a specific file type were changed
+      # in the PR. If they were, run the relevant linters. Otherwise, skip.
 
-      # Runs a single command using the runners shell
-      - name: Run a one-line script
-        run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      - name: Lint Markdown
+        if: ${{ steps.filter.outputs.md == 'true' }}
+        run: npm run lint:md
+      
+      - name: Skip Test Cases for Documentation
+        if: ${{ steps.filter.outputs.rst == 'true' }}
+        run: echo RST file changed. Tests skipped.
