@@ -46,6 +46,6 @@ jobs:
         if: ${{ steps.filter.outputs.md == 'true' }}
         run: npm run lint:md
       
-      - name: Lint Restructured
+      - name: Skip Test Cases for Documentation
         if: ${{ steps.filter.outputs.rst == 'true' }}
         run: echo RST file changed. Tests skipped.
