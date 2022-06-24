@@ -29,7 +29,7 @@ jobs:
           # Checkout as many commits as needed for the diff
           fetch-depth: 2
       - shell: pwsh
-          # Give an id to the step, so we can reference it later
+          # Give an id to the step, so we can reference it later.
         id: check_file_changed
         run: |
           # Diff HEAD with the previous commit
