@@ -6,9 +6,8 @@ name: Documentation Test
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    branches:
+      - 'main'
 
   # Allows you to run this workflow manually from the Actions tab
   # workflow_dispatch:
@@ -26,26 +25,25 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v3
-    # Checks to see if any files in the PR match one of the listed file types.
-    # This will return true if there's a markdown/RST file that was changed
-    # in the PR.
-      - name: Dorny Path Filter
-        uses: dorny/paths-filter@v2
-        id: filter
         with:
-          filters: |
-            md:
-              - '**/*.md'
-            rst:
-              - '**/*.rst'
-        
-      # Use the filter to check if files with a specific file type were changed
-      # in the PR. If they were, run the relevant linters. Otherwise, skip.
+          # Checkout as many commits as needed for the diff
+          fetch-depth: 2
+      - shell: pwsh
+          # Give an id to the step, so we can reference it later
+        id: check_file_changed
+        run: |
+          # Diff HEAD with the previous commit
+          $diff = git diff --name-only HEAD^ HEAD
 
-      - name: Lint Markdown
-        if: ${{ steps.filter.outputs.md == 'true' }}
-        run: npm run lint:md
+          # Check if a file under docs/ or with the .md extension has changed (added, modified, deleted)
+          $SourceDiff = $diff | Where-Object { $_ -match '^docs/' -or $_ -match '.rst$' }
+          $HasDiff = $SourceDiff.Length -gt 0
+
+          # Set the output named "docs_changed"
+          Write-Host "::set-output name=docs_changed::$HasDiff"
       
-      - name: Skip Test Cases for Documentation
-        if: ${{ steps.filter.outputs.rst == 'true' }}
-        run: echo RST file changed. Tests skipped.
+      # Run the step only with "docs_changed" equals "True"
+      - shell: pwsh
+        # steps.<step_id>.outputs.<output name>
+        if: steps.check_file_changed.outputs.docs_changed == 'True'
+        run: echo publish docs
