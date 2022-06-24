@@ -25,12 +25,12 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
-      - uses: actions/checkout@v3
+        uses: actions/checkout@v3
     # Checks to see if any files in the PR match one of the listed file types.
     # This will return true if there's a markdown/RST file that was changed
     # in the PR.
       - name: Dorny Path Filter
-      - uses: dorny/paths-filter@v2
+        uses: dorny/paths-filter@v2
         id: filter
         with:
           filters: |
