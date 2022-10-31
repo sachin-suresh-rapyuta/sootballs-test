@@ -19,7 +19,7 @@ msgstr ""
 
 #: ../../index.rst:2
 msgid "Welcome to Lumache's documentation!"
-msgstr ""
+msgstr "Lumache のドキュメントへようこそ!"
 
 #: ../../index.rst:4
 msgid ""
@@ -27,13 +27,17 @@ msgid ""
 "that creates recipes mixing random ingredients. It pulls data from the "
 "`Open Food Facts database <https://world.openfoodfacts.org/>`_ and offers"
 " a *simple* and *intuitive* API."
-msgstr ""
+msgstr "**Lumache** (/lu'make/) は、料理人や料理愛好家向けの Python ライブラリです。
+ランダムな材料を混ぜてレシピを作成します。からデータを取得します。
+`Open Food Facts データベース <https://world.openfoodfacts.org/>`_ とオファー
+ *シンプル*で*直感的な* API。"
 
 #: ../../index.rst:9
 msgid ""
 "Check out the :doc:`usage` section for further information, including how"
 " to :ref:`installation` the project."
 msgstr "詳細については、:doc:`使用法` セクションを参照してください。
+ プロジェクトの :ref:`インストール` へ。"
  プロジェクトの :ref:`インストール` へ。"
 
 #: ../../index.rst:14
