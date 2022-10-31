@@ -1,0 +1,61 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) 2021, Graziella
+# This file is distributed under the same license as the Testing... package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2022.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Testing... 0.1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2022-10-31 17:26+0900\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.10.3\n"
+
+#: ../../source/index.rst:2
+msgid "Welcome to Lumache's documentation!"
+msgstr "Lumache のドキュメントへようこそ!"
+
+#: ../../source/index.rst:4
+msgid ""
+"**Lumache** (/lu'make/) is a Python library for cooks and food lovers "
+"that creates recipes mixing random ingredients. It pulls data from the "
+"`Open Food Facts database <https://world.openfoodfacts.org/>`_ and offers"
+" a *simple* and *intuitive* API."
+msgstr "**Lumache** (/lu'make/) は、料理人や料理愛好家向けの Python ライブラリです。
+ランダムな材料を混ぜてレシピを作成します。からデータを取得します。
+`Open Food Facts データベース <https://world.openfoodfacts.org/>`_ とオファー
+ *シンプル*で*直感的な* API。"
+
+#: ../../source/index.rst:9
+msgid ""
+"Check out the :doc:`usage` section for further information, including how"
+" to :ref:`installation` the project."
+msgstr "詳細については、:doc:`使用法` セクションを参照してください。
+ プロジェクトの :ref:`インストール` へ。"
+
+#: ../../source/index.rst:14
+msgid "This project is under active development."
+msgstr "このプロジェクトは活発に開発中です。"
+
+#: ../../source/index.rst:17
+msgid "Contents"
+msgstr "コンテンツ"
+
+#: ../../source/version-test.rst:2
+msgid "Version Test"
+msgstr "バージョンテスト"
+
+#: ../../source/version-test.rst:4
+msgid "This is check for doc version"
+msgstr "これはドキュメントのバージョンのチェックです"
+
+#: ../../source/version-test.rst:6
+msgid "After installing sphinx-versions"
+msgstr "sphinx-versions のインストール後"
+
