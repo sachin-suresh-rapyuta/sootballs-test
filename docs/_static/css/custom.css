@@ -1,0 +1,59 @@
+.tight-table td {
+  white-space: normal !important;
+}
+
+/* Sidebar header (and topbar for mobile) */
+.wy-side-nav-search, .wy-nav-top {
+  background: #FFFFFF;
+}
+/* Sidebar */
+.wy-nav-side {
+  background: #f2f2f2;
+}
+
+/*Sidebar list element*/
+.wy-menu-vertical a{
+  color: #000000;
+}
+
+/*Sidebar list element hover */
+.wy-menu-vertical a:hover{
+  color: red;
+  background-color: #808080;
+}
+
+.wy-menu-vertical li.current a:hover{
+  color: red;
+}
+
+.wy-menu-vertical li.toctree-l1.current>a{
+  color: red;
+}
+
+/*Top right breadcrumb (View page source) color*/
+.wy-breadcrumbs li a:first-child{
+  color: #000000;
+}
+
+/* TABLE OF CONTENTS text color */
+.wy-menu-vertical header, .wy-menu-vertical p.caption{
+  color: #000000;
+}
+
+/*Rapyuta logo*/
+.wy-side-nav-search .wy-dropdown>a img.logo, .wy-side-nav-search>a img.logo{
+  height: 180px;
+}
+
+.highlight .err {
+  border: inherit;
+  box-sizing: inherit;
+}
+
+/*Align logo in Accidental safety guidelines table*/
+.accident-logo{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
