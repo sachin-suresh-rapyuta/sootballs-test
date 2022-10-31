@@ -1,0 +1,31 @@
+[TEMPLATE_CONFIGURATION]
+name = my article configuration
+template = article
+stylesheet = pa_amr_stylesheet.rts
+
+parts =
+    title
+    ;front_matter
+    contents
+language = fr
+abstract_location = title
+
+[SectionTitles]
+contents = 'Contents'
+
+[AdmonitionTitles]
+caution = 'Careful!'
+warning = 'Please be warned'
+
+[VARIABLES]
+paper_size = A5
+
+[title]
+page_number_format = lowercase roman
+end_at_page = left
+
+[contents]
+page_number_format = number
+
+[title_page]
+top_margin = 2cm
